@@ -9,10 +9,10 @@ const Slider = () => {
   const [index, setIndex] = useState(0);
   // Ajoute une vérification de nullité avec l'opérateur `??`
   // Si `data` ou `focus` est undefined, `byDataDesc` sera un tableau vide
-  // Trie les données par date décroissante avec une vérification de nullité
+  // Trie les données par date croissante avec une vérification de nullité
   const byDateDesc =
     data?.focus.sort((evtA, evtB) =>
-      new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
+      new Date(evtA.date) > new Date(evtB.date) ? -1 : -1
     ) ?? [];
 
   // Effectue le changement automatique toutes les 5 secondes
@@ -30,7 +30,7 @@ const Slider = () => {
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
-        // La clé du conteneur principal; Cela garantit un clé unique pour caque `div`
+        // La clé du conteneur principal; Cela garantit un clé unique pour chaque `div`
         // en utilisant soit l'ID de évènements, soit l'index si l'ID n'est pas disponible
         <div key={event.id ? `card-${event.id}` : `card-${idx}`}>
           <div

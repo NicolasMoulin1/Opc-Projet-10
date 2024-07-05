@@ -31,12 +31,22 @@ export const DataProvider = ({ children }) => {
     getData();
   });
 
+  const last = data && data.events ? (() => {
+    let lastEvent = null; // Initialisation de la variable qui contiendra l'événement le plus récent
+    data.events.forEach(event => {
+        if (!lastEvent || new Date(event.date) > new Date(lastEvent.date)) {
+            lastEvent = event; // Mise à jour de lastEvent si l'événement actuel est plus récent
+        }
+    });
+    return lastEvent; // Retourne l'événement le plus récent après avoir parcouru tous les événements
+})() : null;
   return (
     <DataContext.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         data,
         error,
+        last
       }}
     >
       {children}
