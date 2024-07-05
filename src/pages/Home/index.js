@@ -132,6 +132,7 @@ const Page = () => {
           <div>01 23 45 67 89</div>
           <div>contact@724events.com</div>
           <div>
+          {/* Ajout des Url twitch, facebook, twitter et youtube */}
             <a href="https://www.twitch.tv/">
               <Icon name="twitch" />
             </a>

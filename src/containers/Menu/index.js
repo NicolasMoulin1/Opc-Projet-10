@@ -9,6 +9,7 @@ const Menu = () => (
     <Logo />
     <ul>
       <li>
+      {/* Ajout des ancre du menu */}
         <a href="#nos-services">Nos services</a>
       </li>
       <li>
