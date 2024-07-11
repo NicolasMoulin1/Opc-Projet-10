@@ -112,7 +112,7 @@ const Page = () => {
         </div>
       </main>
       <footer className="row">
-         {/* si "last" est undefined, null ou vide alors le contenue entre parenthèse sera rendu. sinon rien ne sera rendu */}
+         
         {last && (
           <div className="col presta">
             <h3>Notre derniére prestation</h3>

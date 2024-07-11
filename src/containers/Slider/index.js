@@ -9,7 +9,7 @@ const Slider = () => {
   const [index, setIndex] = useState(0);
   // Ajoute une vérification de nullité avec l'opérateur `??`
   // Si `data` ou `focus` est undefined, `byDataDesc` sera un tableau vide
-  // Trie les données par date croissante avec une vérification de nullité
+  // Trie les données par date décroissante
   const byDateDesc =
     data?.focus.sort((evtA, evtB) =>
       new Date(evtA.date) > new Date(evtB.date) ? -1 : -1
